@@ -4,27 +4,28 @@
     done: boolean;
   }
 
-  let todos = <ToDo[]>[];
-  let todoName = ""
+  let todos: ToDo[] = [];
+  let todoName = "";
 
   function addToDo(name: string) {
     if (name.trim() === "") return;
-    todos = [...todos, {
-      name,
-      done: false
-    } as ToDo]
+    todos = [...todos, { name, done: false }];
     console.log(todos);
   }
 </script>
 
 <main>
   <h1>ToDos:</h1>
-  {#if todos.length < 1}
-  <p>Es gibt noch keine ToDos.</p>
+  {#if todos.length === 0}
+    <p>There are no ToDos yet.</p>
   {:else}
-  {#each todos as todo}
-    <div on:click={() => todo.done = !todo.done} class:done={todo.done}>{todo.name}</div>
-  {/each}
+    <ul>
+      {#each todos as todo}
+        <li on:click={() => todo.done = !todo.done} class:done={todo.done}>
+          {todo.name}
+        </li>
+      {/each}
+    </ul>
   {/if}
   <div>
     <input bind:value={todoName}>
