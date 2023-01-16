@@ -1,6 +1,6 @@
-# Svelte + TS + Vite
+# Basic ToDo List (Svelte + TypeScript + Vite)
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+This simple ToDo List application is created for experimenting with the Svelte framework and built using TypeScript, Svelte, and Vite. It serves as a basic template for me and those looking to familiarize themselves with these technologies.
 
 ## Recommended IDE Setup
 
